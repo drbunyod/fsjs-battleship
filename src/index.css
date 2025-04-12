@@ -1,0 +1,87 @@
+body {
+  font-family: sans-serif;
+  font-size: 0.9em;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#game-status {
+  padding: 10px;
+  background-color: #f5f2f2;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.side {
+  text-align: center;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(11, 30px);
+  grid-template-rows: repeat(11, 30px);
+  gap: 1px;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #000000;
+  cursor: pointer;
+}
+
+.cell:hover {
+  background-color: #cccccc;
+}
+
+.cell-invisible {
+  border: none;
+  cursor: auto;
+}
+
+.cell-invisible:hover {
+  background-color: #ffffff;
+  cursor: default;
+}
+
+.ship,
+.ship:hover {
+  color: #2a3f02;
+  background-color: #729b26;
+  font-size: 1.8em;
+  cursor: default;
+}
+
+.hit,
+.hit:hover {
+  color: #ff0000;
+  background-color: #fc9090;
+  font-size: 2em;
+  cursor: default;
+}
+
+.miss,
+.miss:hover {
+  background-color: #8fccdb;
+  cursor: default;
+}
+
+.board-title {
+  margin-bottom: 0;
+}
+
+.remaining-ships {
+  margin-top: 3px;
+  color: #969494;
+  font-size: 0.8em;
+}
