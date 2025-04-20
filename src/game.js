@@ -10,6 +10,8 @@ class GameManager {
   }
 
   start() {
+    this.player1.randomizeGrid();
+    this.player2.randomizeGrid();
     this.isRunning = true;
     this.turn = 1;
   }
@@ -23,6 +25,7 @@ class GameManager {
 
   end(winner) {
     this.isRunning = false;
+    this.turn = null;
     this.winner = winner;
   }
 
