@@ -6,14 +6,21 @@ const game = new GameManager('computer');
 const dom = new DOMManager(game);
 dom.updateScreen();
 
-const gameRunner = () => {
+let lastTime = performance.now();
+const delay = 1000;
+
+const gameRunner = (currentTime) => {
   if (!game.isRunning && game.winner !== null) {
     return;
   }
 
-  if (game.player2.type === 'computer' && game.turn === 2) {
-    game.computerAttack();
-    dom.updateScreen();
+  const elapsedTime = currentTime - lastTime;
+  if (elapsedTime >= delay) {
+    if (game.player2.type === 'computer' && game.turn === 2) {
+      game.computerAttack();
+      dom.updateScreen();
+    }
+    lastTime = currentTime;
   }
 
   requestAnimationFrame(gameRunner);
